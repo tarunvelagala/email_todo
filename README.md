@@ -1,2 +1,31 @@
 # email_todo
-Simple ToDo 🔄 App with FireBase Integration 🔥🔥🔥🔥
+Flutter ToDo 🔄 App with FireBase Integration 🔥
+<br>
+<br>
+
+
+- [✔] FireBase Integration
+- [✔] App UI
+- [✔] Google SignIn
+- [✔] Email Validation 
+- [✔] Email SignIn
+- [✔] Task Completion and Deletion
+- [❌] Mail Scheduling
+- [❌] Notification Service
+
+#### SignIn Page
+<img src="Screenshots/Screenshot_20190517-123925.jpg" width="250" >
+<br>
+<br>
+
+#### Add Task Page
+<img src="Screenshots\Screenshot_20190517-141406.jpg" width="250" >
+
+<br>
+<br>
+
+#### Home Page
+<img src="Screenshots\Screenshot_20190517-141430.jpg" width="250" >
+
+<br>
+<br>
