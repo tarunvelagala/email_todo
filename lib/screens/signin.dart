@@ -1,4 +1,6 @@
 import 'package:email_todo/screens/homepage.dart';
+import 'package:email_todo/screens/loginpage.dart';
+import 'package:email_todo/screens/signupemail.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
@@ -132,7 +134,10 @@ class _SignInPageState extends State<SignInPage> {
                   child: Container(
                     width: 250.0,
                     child: MaterialButton(
-                      onPressed: () => Navigator.pushNamed(context, '/signup'),
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => new SignUpPage())),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
@@ -202,8 +207,10 @@ class _SignInPageState extends State<SignInPage> {
                   child: Container(
                     width: 250.0,
                     child: MaterialButton(
-                      onPressed: () =>
-                          Navigator.of(context).pushNamed('/login'),
+                      onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => new LoginPage())),
                       child: Row(
                         mainAxisSize: MainAxisSize.min,
                         children: <Widget>[
