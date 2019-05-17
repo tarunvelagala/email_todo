@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "234589231544",
+    "firebase_url": "https://emailremainder-98648.firebaseio.com",
+    "project_id": "emailremainder-98648",
+    "storage_bucket": "emailremainder-98648.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:234589231544:android:345fd6841ae60fc3",
+        "android_client_info": {
+          "package_name": "greencoders.emailtodo"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "234589231544-84fpi63j1a1qqcsd8r5idk7k57mof4kl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "greencoders.emailtodo",
+            "certificate_hash": "531954918025414323236c38502fbe412c7f137f"
+          }
+        },
+        {
+          "client_id": "234589231544-lnicfpb6ish1nobke0m6u1tt9pn75eek.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA1ostwkhkocO2jztXz9RJtETs0XwCYdEQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "234589231544-lnicfpb6ish1nobke0m6u1tt9pn75eek.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
