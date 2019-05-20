@@ -15,10 +15,12 @@ Flutter ToDo 🔄 App with FireBase Integration 🔥
 
 <br>
 <br>
+
 #### Issues to be fixed
 <p>After typing the new task, for selecting date and time the DATETIME PICKER gives RenderFlex Error 😕</p>
 <br>
 <br>
+
 #### SignIn Page
 <img src="Screenshots/Screenshot_20190517-123925.jpg" width="250" >
 <br>
