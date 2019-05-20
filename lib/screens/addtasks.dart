@@ -1,9 +1,11 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:datetime_picker_formfield/datetime_picker_formfield.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/painting.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:intl/intl.dart';
+import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 
 class AddTask extends StatefulWidget {
   AddTask({this.email});
@@ -13,12 +15,29 @@ class AddTask extends StatefulWidget {
 }
 
 class _AddTaskState extends State<AddTask> {
+  FlutterLocalNotificationsPlugin flutterLocalNotificationPlugin;
   String email;
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
     email = widget.email;
+    flutterLocalNotificationPlugin = new FlutterLocalNotificationsPlugin();
+    var android = new AndroidInitializationSettings('@mipmap/ic_launcher');
+    var ios = new IOSInitializationSettings();
+    var initSettings = new InitializationSettings(android, ios);
+    flutterLocalNotificationPlugin.initialize(initSettings,
+        onSelectNotification: onSelectNotification);
+  }
+
+  Future onSelectNotification(String payload) async {
+    debugPrint("payload: $payload");
+    showDialog(
+        context: context,
+        builder: (_) => new AlertDialog(
+              title: Text("Notification"),
+              content: Text("$payload"),
+            ));
   }
 
   final GlobalKey<FormState> _formKey1 = GlobalKey<FormState>();
@@ -42,6 +61,20 @@ class _AddTaskState extends State<AddTask> {
       });
       return false;
     }
+  }
+
+  _scheduleNotification() async {
+    var scheduledNotificationDateTime = new DateTime(
+            _date.year, _date.month, _date.day, _time.hour, _time.minute)
+        .subtract(Duration(minutes: 5));
+    print(scheduledNotificationDateTime);
+    var android = new AndroidNotificationDetails(
+        'channel id', 'channel NAME', 'CHANNEL DESCRIPTION');
+    var iOS = new IOSNotificationDetails();
+    var platform = new NotificationDetails(android, iOS);
+    await flutterLocalNotificationPlugin.schedule(0, 'ToDo Remainder',
+        _task.toString(), scheduledNotificationDateTime, platform);
+    //await flutterLocalNotificationPlugin.show(0,'ToDo Remainder' ,  _task.toString(), platform);
   }
 
   void _addTask() {
@@ -219,6 +252,7 @@ class _AddTaskState extends State<AddTask> {
                             onPressed: () {
                               if (_verifyTaskForm()) {
                                 _addTask();
+                                _scheduleNotification();
                               }
                             },
                             child: Row(

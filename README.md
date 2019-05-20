@@ -10,8 +10,9 @@ Flutter ToDo 🔄 App with FireBase Integration 🔥
 - [✔] Email Validation 
 - [✔] Email SignIn
 - [✔] Task Completion and Deletion
+- [✔] Notification Service
 - [❌] Mail Scheduling
-- [❌] Notification Service
+
 
 #### SignIn Page
 <img src="Screenshots/Screenshot_20190517-123925.jpg" width="250" >

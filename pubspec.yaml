@@ -33,6 +33,7 @@ dependencies:
   auto_size_text: 
   datetime_picker_formfield: 
   intl: 
+  flutter_local_notifications:
     
 
 dev_dependencies:
